@@ -1,0 +1,15 @@
+html
+{
+	height:100%;
+	box-sizing:border-box;
+}
+
+body
+{
+	font-family:sans-serif;	
+}
+
+#chat-info, #users-display
+{
+	height:250px;
+}
