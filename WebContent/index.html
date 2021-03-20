@@ -6,6 +6,8 @@
 			rel="stylesheet"
 			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 			crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
 		<link rel="shortcut icon" type="images/jpg" href="./images/icon.jpg">
 		<script
@@ -19,97 +21,118 @@
 		<meta charset="utf-8">
 	</head>
 <body>
-	<div class="container border border-dark rounded mx-auto mt-2 mb-2">
 
-		<div class="row border-bottom border-dark" id="title-div">
-			<h1 class="col-sm p-2 m-2 text-center" id="title">Chat</h1>
-		</div>
+	<div class="collapse" id="navbarToggleExternalContent">
+	  <form class="p-2 m-2" action="/process">
+	  	<div class="d-flex flex-row-reverse">
+	  		<input class="btn btn-primary float-right" type="submit" name="log-out" value="log out">
+	  	</div>
+	  </form>
+	</div>
+	<nav class="navbar navbar-light bg-light">
+	  <div class="container-fluid">
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	  </div>
+	</nav>
 
-		<div class="row" id="info">
-			<div
-				class="col-sm-3 p-2 border border-left-0 border-top-0 border-dark overflow-auto"
-				id="users-display"></div>
-			<div
-				class="col-sm p-2  border border-right-0 border-top-0 border-dark overflow-auto"
-				id="chat-info"></div>
-		</div>
+	<div class="container">
 
-
-		<div class="row" id="UX">
-
-			<form id="chat-form" class="col-sm-9 m-2" action="Chat" method="post">
-
-				<div class="form-group row m-2">
-
-					<div class="info col-sm">
-						<input type="radio" id="send-to-all" name="sendType"
-							value="send to all" class="form-check-input border border-secondary" checked> <label
-							for="send-to-all" class="form-check-label">Send To All</label>
-					</div>
-
-					<div class="info col-sm">
-						<input type="radio" id="send-private" name="sendType"
-							value="send private" class="form-check-input border border-secondary"> <label
-							for="send-private" class="form-check-label">Send Private</label>
-					</div>
-
-					<div class="info col-sm">
-						<input type="radio" id="send-private-encrypted" name="sendType"
-							value="send private encrypted" class="form-check-input border border-secondary">
-						<label for="send-private-encrypted" class="form-check-label">Send
-							Private Encrypted</label>
-					</div>
-
-				</div>
-				
-				<div class="form-group row m-2">
-				
-					<label for="id-send" class="col-sm-4 col-form-label">ID to
-						send Private:</label>
-					<div class="col-sm">
-						<input type="text" id="id-send" name="idSend"
-							class="border border-secondary form-control w-100">
-					</div>
-				
-				</div>
-
-				<div class="form-group row m-2">
-
-					<div class="info col-sm">
-
-						<textarea class="form-control border border-secondary" id="user-input" name="userInput"
-							rows="5" cols="2"></textarea>
-					</div>
-
-				</div>
-
-				<div class="form-group row m-2">
-
-					<div class="info col-sm">
-						<input type="submit" value="send" name="send" id="send"
-							class="border rounded btn btn-primary" disabled />
-					</div>
-				</div>
-
-			</form>
-
-			<div class="info col-sm m-2">
-				<input type="submit" value="connect" name="connect" id="connect"
-					class="border rounded btn btn-primary" />
-			</div>
-
-			<div class="info col-sm m-2">
-				<input type="submit" value="disconnect" name="disconnect"
-					id="disconnect" class="border rounded btn btn-primary" disabled />
-			</div>
+		<div class="row">
+			<div class="col-sm-9 border border-dark rounded mx-auto mt-4 mb-4" id="main">
 			
+				<div class="row border-bottom border-dark" id="title-div">
+					<h1 class="col-sm p-2 m-2 text-center" id="title">Chat</h1>
+				</div>
+			
+				<div class="row p-4" id="info">
+					<div
+						class="col-md m-4 p-4 bg-white border border-dark rounded overflow-auto"
+						id="users-display"></div>
+					<div
+						class="col-md-6 m-4 p-4  bg-white border border-dark rounded overflow-auto"
+						id="chat-info"></div>
+				</div>
+				
+				<div class="row">
+					<div class="d-flex flex-row">
+					  <div class="p-2">
+					  	<input type="submit" value="connect" name="connect" id="connect"
+								class="border rounded btn btn-primary" />
+					  </div>
+					  <div class="p-2">
+					  	<input type="submit" value="disconnect" name="disconnect"
+								id="disconnect" class="border rounded btn btn-primary" disabled />
+					  </div>
+					</div>
+				</div>
+				
+			
+				<div class="row" id="UX">
+			
+					<form id="chat-form" class="col-sm m-4 p-2 border border-dark rounded" action="Chat" method="post">
+			
+						<div class="form-group row m-2">
+			
+							<div class="info col-sm">
+								<input type="radio" id="send-to-all" name="sendType"
+									value="send to all" class="form-check-input border border-secondary" checked> <label
+									for="send-to-all" class="form-check-label">Send To All</label>
+							</div>
+			
+							<div class="info col-sm">
+								<input type="radio" id="send-private" name="sendType"
+									value="send private" class="form-check-input border border-secondary"> <label
+									for="send-private" class="form-check-label">Send Private</label>
+							</div>
+			
+							<div class="info col-sm">
+								<input type="radio" id="send-private-encrypted" name="sendType"
+									value="send private encrypted" class="form-check-input border border-secondary">
+								<label for="send-private-encrypted" class="form-check-label">Send
+									Private Encrypted</label>
+							</div>
+			
+						</div>
+						
+						<div class="form-group row m-4">
+						
+							<label for="id-send" class="col-sm-4 col-form-label">ID to
+								send Private:</label>
+							<div class="col-sm">
+								<input type="text" id="id-send" name="idSend"
+									class="bg-white border border-secondary form-control w-100">
+							</div>
+						
+						</div>
+			
+						<div class="form-group row m-4">
+			
+							<div class="info col-sm">
+			
+								<textarea class="form-control bg-white border border-secondary" id="user-input" name="userInput"
+									rows="2"></textarea>
+							</div>
+			
+						</div>
+			
+						<div class="form-group row m-2">
+			
+							<div class="info col-sm">
+								<input type="submit" value="send" name="send" id="send"
+									class="border rounded btn btn-primary" disabled />
+							</div>
+						</div>
+			
+					</form>
+						
+				</div>
+			
+			</div>
+		
 		</div>
 	</div>
 
-
-
-
-
-	<div></div>
 </body>
 </html>
