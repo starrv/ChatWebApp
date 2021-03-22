@@ -14,7 +14,7 @@ body
 	height:250px;
 }
 
-#title-div, #chat-form
+#title-div, #chat-form, #signInForm, #createAccountForm
 {
-	background:#b2c9db;
+	background:#cee6f5;
 }
