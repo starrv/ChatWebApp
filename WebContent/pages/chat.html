@@ -23,9 +23,9 @@
 <body>
 
 	<div class="collapse" id="navbarToggleExternalContent">
-	  <form class="p-2 m-2" action="/process">
+	  <form class="p-2 m-2" action="../process" method="post">
 	  	<div class="d-flex flex-row-reverse">
-	  		<input class="btn btn-primary float-right" type="submit" name="log-out" value="log out">
+	  		<input class="btn btn-primary float-right" type="submit" id="logOut" name="logOut" value="log out">
 	  	</div>
 	  </form>
 	</div>
@@ -71,7 +71,7 @@
 			
 				<div class="row p-5" id="UX">
 			
-					<form id="chat-form" class="col-sm m-4 p-2 border border-dark rounded" action="Chat" method="post">
+					<form id="chat-form" class="col-sm m-4 p-2 border border-dark rounded" method="post">
 			
 						<div class="form-group row m-2">
 			

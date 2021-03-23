@@ -21,7 +21,7 @@ public class Process extends HttpServlet
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
 	{
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		resp.getWriter().println("hello");
 	}
 
 	@Override
@@ -30,17 +30,17 @@ public class Process extends HttpServlet
 		// TODO Auto-generated method stub
 		if(req.getParameter("signIn")!=null)
 		{
-			resp.getWriter().print("sign in");
+			resp.getWriter().println("sign in");
 			signIn();
 		}
 		else if(req.getParameter("createAccount")!=null)
 		{
-			resp.getWriter().print("create account");
+			resp.getWriter().println("create account");
 			createAccount();
 		}
 		else if(req.getParameter("logOut")!=null)
 		{
-			resp.getWriter().print("log out");
+			resp.getWriter().println("log out");
 			logOut();
 		}
 	}
