@@ -16,5 +16,15 @@ body
 
 #title-div, #chat-form, #signInForm, #createAccountForm
 {
-	background:#cee6f5;
+	background:#d5d7eb;
+}
+
+form a
+{
+	color:#692850;
+}
+
+a
+{
+	text-decoration:none;
 }
