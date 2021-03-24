@@ -14,14 +14,24 @@ body
 	height:250px;
 }
 
+#main
+{
+	background:#fffdfa;
+}
+
 #title-div, #chat-form, #signInForm, #createAccountForm
 {
-	background:#d5d7eb;
+	background:radial-gradient(#fff,#e3ceb3);
 }
 
 form a
 {
-	color:#692850;
+	color:#332510;
+}
+
+button, input[type='submit']
+{
+	background:#332510;
 }
 
 a
