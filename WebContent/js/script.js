@@ -4,6 +4,7 @@ $(document).ready(function()
 	var read=null;
 	var isConnected=false;
 	var readInterval=1000;
+	const socketURL='ws://127.0.0.1:8080/ChatWebApp/endpoint';
 	
 	// Create WebSocket connection
 	let socket = null;
@@ -15,7 +16,7 @@ $(document).ready(function()
 		$("#send").attr("disabled",false);
 		
 		// Create WebSocket connection
-		socket = new WebSocket('ws://127.0.0.1:8080/ChatWebApp/endpoint');
+		socket = new WebSocket(socketURL);
 		
 		var getState=setInterval(function(){
 			console.log("Ready state: "+socket.readyState);
@@ -28,7 +29,14 @@ $(document).ready(function()
 
 		// Listen for messages
 		socket.addEventListener('message', function (event) {
-			$("#chat-info").html($("#chat-info").html()+"<p class='border border-dark rounded p-2 m-2 bg-light' style='box-shadow:5px 5px 5px gray;'>Message from server: "+event.data+"</p>");
+			if(event.data[0]=="~")
+			{
+				$("#users-display").html("<p class='border border-dark rounded p-2 m-2 bg-light' style='box-shadow:5px 5px 5px gray;'>"+event.data+"</p>");
+			}
+			else
+			{
+				$("#chat-info").html($("#chat-info").html()+"<p class='border border-dark rounded p-2 m-2 bg-light' style='box-shadow:5px 5px 5px gray;'>Message from server: "+event.data+"</p>");
+			}
 		});
 		
 		// Listen for possible errors
