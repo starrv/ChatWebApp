@@ -18,18 +18,18 @@ public class MyWebSocket
     @OnOpen
     public void onOpen(Session session) 
     {
-        System.out.println("onOpen::" + session.getId());  
+    	session.getUserProperties().put("username", "user-"+session.getOpenSessions().size());
+        System.out.println("User "+session.getUserProperties().get("username")+" with session id "+session.getId()+" is connected");  
     }
     @OnClose
     public void onClose(Session session) 
     {
-        System.out.println("onClose::" +  session.getId());
+        System.out.println("User "+session.getUserProperties().get("username")+" with session id "+session.getId()+" is disconnected");
     }
     
     @OnMessage
     public void onMessage(String message, Session session) 
     {
-        System.out.println("onMessage::From=" + session.getId() + " Message=" + message);
         Set<Session> sessions=session.getOpenSessions();
         Iterator<Session> iterator=sessions.iterator();
         Session nextSession=null;
@@ -38,7 +38,8 @@ public class MyWebSocket
         	nextSession=iterator.next();
         	try 
         	{
-        		nextSession.getBasicRemote().sendText(message);
+        		System.out.println("Message from "+session.getUserProperties().get("username")+": "+message);
+        		nextSession.getBasicRemote().sendText("Message from "+session.getUserProperties().get("username")+": "+message);
         	}
         	catch(IOException e)
         	{

@@ -28,8 +28,7 @@ $(document).ready(function()
 
 		// Listen for messages
 		socket.addEventListener('message', function (event) {
-			$("#chat-info").html($("#chat-info").html()+"<p class='border border-dark rounded p-2 m-2 bg-light' style='box-shadow:5px 5px 5px gray;'>"+event.data+"</p>");
-		    console.log('Message from server', event.data);
+			$("#chat-info").html($("#chat-info").html()+"<p class='border border-dark rounded p-2 m-2 bg-light' style='box-shadow:5px 5px 5px gray;'>Message from server: "+event.data+"</p>");
 		});
 		
 		// Listen for possible errors
