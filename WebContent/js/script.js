@@ -31,7 +31,7 @@ $(document).ready(function()
 		socket.addEventListener('message', function (event) {
 			if(event.data[0]=="~")
 			{
-				$("#users-display").html("<p class='border border-dark rounded p-2 m-2 bg-light' style='box-shadow:5px 5px 5px gray;'>"+event.data+"</p>");
+				$("#users-display").html("<p class='border border-dark rounded p-2 m-2 bg-light' style='box-shadow:5px 5px 5px gray;'>"+event.data.substring(0)+"</p>");
 			}
 			else
 			{
