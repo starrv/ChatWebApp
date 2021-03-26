@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -58,7 +60,7 @@
 			  	</div>
 			  	
 			  	<div class="form-group m-4">
-			  		<a href="./pages/createAccount.html">
+			  		<a href="./createAccount.jsp">
 			  			<h5>
 			  				Create Account
 			  			</h5>

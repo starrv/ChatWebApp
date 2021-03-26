@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,14 +10,14 @@
 			crossorigin="anonymous">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
-		<link rel="shortcut icon" type="images/jpg" href="../images/icon.jpg">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="shortcut icon" type="images/jpg" href="./images/icon.jpg">
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
 			crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="../js/script.js" type="text/javascript"></script>
+		<script src="./js/script.js" type="text/javascript"></script>
 		<title>Create Account</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
@@ -33,23 +35,23 @@
 		  
 		  <div class="row p-4">
 		  
-		  	<form class="col-lg-6 mx-auto border border-dark rounded p-4 m-4" id="createAccountForm" action="../process" method="post">
+		  	<form class="col-lg-6 mx-auto border border-dark rounded p-4 m-4" id="createAccountForm" action="./process" method="post">
 		  
-			  	<div class="form-group row m-4">
-			  		<label for="username">
-			  			Username:
-			  		</label>
-			  		<div class="col-sm">
-						<input type="text" id="username" name="username" placeholder="username" class="form-control border border-dark rounded w-100">		  			
-			  		</div>
-			  	</div>
-			  
 			  	<div class="form-group row m-4">
 			  		<label for="email">
 			  			Email:
 			  		</label>
 			  		<div class="col-sm">
 						<input type="email" id="email" name="email" placeholder="email" class="form-control border border-dark rounded w-100">		  			
+			  		</div>
+			  	</div>
+			  	
+			  	<div class="form-group row m-4">
+			  		<label for="username">
+			  			Username:
+			  		</label>
+			  		<div class="col-sm">
+						<input type="text" id="username" name="username" placeholder="username" class="form-control border border-dark rounded w-100">		  			
 			  		</div>
 			  	</div>
 			  	
@@ -67,7 +69,7 @@
 			  	</div>
 			  	
 			  	<div class="form-group m-4">
-			  		<a href="../">
+			  		<a href="./index.jsp">
 			  			<h5>
 			  				Sign In
 			  			</h5>
