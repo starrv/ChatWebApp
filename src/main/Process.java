@@ -85,7 +85,7 @@ public class Process extends HttpServlet
 	}
 	
 	
-	private boolean signIn(String username, String password)
+	static boolean signIn(String username, String password)
 	{
 		try 
 		{
@@ -123,7 +123,7 @@ public class Process extends HttpServlet
 		} 
 	}
 	
-	private boolean createAccount(String email, String username, String password) 
+	static boolean createAccount(String email, String username, String password) 
 	{
 		try 
 		{
