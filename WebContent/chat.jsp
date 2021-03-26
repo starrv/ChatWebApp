@@ -25,7 +25,7 @@
 	<body>
 	
 		<div class="collapse" id="navbarToggleExternalContent">
-		  <form class="p-2 m-2" action="./process" method="post">
+		  <form class="p-2 m-2" method="post">
 		  	<div class="d-flex flex-row-reverse">
 		  		<input class="btn btn-primary float-right" type="submit" id="logOut" name="logOut" value="log out">
 		  	</div>

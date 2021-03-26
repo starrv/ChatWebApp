@@ -4,10 +4,12 @@ $(document).ready(function()
 	var read=null;
 	var isConnected=false;
 	var readInterval=1000;
+	
 	const socketURL='ws://127.0.0.1:8080/ChatWebApp/endpoint';
 	
 	// Create WebSocket connection
 	let socket = null;
+	let getState=null;
 	
 	$("#connect").click(function( event )
 	{
@@ -18,7 +20,7 @@ $(document).ready(function()
 		// Create WebSocket connection
 		socket = new WebSocket(socketURL);
 		
-		var getState=setInterval(function(){
+		getState=setInterval(function(){
 			console.log("Ready state: "+socket.readyState);
 		},1000);
 		
@@ -50,47 +52,6 @@ $(document).ready(function()
 			console.log("WebSocket is closed now.");
 		};
 		
-//		$.ajax(
-//				{
-//				  method: "POST",
-//				  url: "http://localhost:8080/ChatWebApp/Chat",
-//				  data: {"clickedButton":"connect"}
-//				})
-//				.done(function( data )
-//				{
-//					console.log(data);					
-//					read=setInterval(function()
-//					{
-//						$.ajax(
-//								{
-//								  method: "POST",
-//								  url: "http://localhost:8080/ChatWebApp/Chat",
-//								  data: {"read":"read"}
-//								})
-//								.done(function( data )
-//								{
-//									if(data!="")
-//									{
-//										console.log(data);
-//									}
-//								})
-//								.fail(function(error)
-//								{
-//									if(error!="")
-//										{
-//											console.error(error);
-//										}
-//									});
-//						},readInterval);						
-//				})
-//				.fail(function(error)
-//				{
-//					console.error(error);
-//				});
-	
-		
-		
-		
 	});
 
 	$("#disconnect").click(function( event )
@@ -99,23 +60,7 @@ $(document).ready(function()
 		$("#disconnect").attr("disabled",true);
 		$("#send").attr("disabled",true);
 		socket.close();	
-		clearInterval(getState);
-				
-//				$.ajax(
-//						{
-//						  method: "POST",
-//						  url: "http://localhost:8080/ChatWebApp/Chat",
-//						  data: {"clickedButton":"disconnect"}
-//						})
-//						.done(function( data )
-//						{
-//							console.log(data);
-//						})
-//						.fail(function(error)
-//						{
-//							console.error(error);
-//						});
-				//clearInterval(read);
+		clearInterval(getState);				
 	});
 	
 	$(window).on("unload",function(){
@@ -124,21 +69,6 @@ $(document).ready(function()
 		$("#send").attr("disabled",true);
 		socket.close();
 		clearInterval(getState);
-//		$.ajax(
-//				{
-//				  method: "POST",
-//				  url: "http://localhost:8080/ChatWebApp/Chat",
-//				  data: {"clickedButton":"disconnect"}
-//				})
-//				.done(function( data )
-//				{
-//					console.log(data);
-//				})
-//				.fail(function(error)
-//				{
-//					console.error(error);
-//				})
-		//clearInterval(read);
 	});
 	
 	$("#send-to-all").click(function(){
@@ -159,22 +89,11 @@ $(document).ready(function()
 	document.querySelector('#chat-form').addEventListener('submit', (event) => {
 		event.preventDefault();
 		var message=$("#user-input").val();
-		socket.send(message);
-//		$.ajax(
-//				{
-//				  method: "POST",
-//				  url: "http://localhost:8080/ChatWebApp/Chat",
-//				  data: {"clickedButton":"send","sendType":sendType, "message":message}
-//				})
-//				.done(function( data )
-//				{
-//					console.log(data);
-//				})
-//				.fail(function(error)
-//				{
-//					console.error(error);
-//				});
-		});
+		if(message!="")
+		{
+			socket.send(message);
+		}
+	});
 });
 
 

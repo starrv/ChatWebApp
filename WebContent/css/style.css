@@ -19,7 +19,7 @@ body
 	background:#fffdfa;
 }
 
-#title-div, #chat-form, #signInForm, #createAccountForm
+#title-div, #chat-form, #signInForm, #createAccountForm, #deleteAccountForm
 {
 	background:radial-gradient(#fff,#e3ceb3);
 }

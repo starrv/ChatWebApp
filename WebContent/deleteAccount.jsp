@@ -18,7 +18,7 @@
 			crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="./js/script.js" type="text/javascript"></script>
-		<title>Sign In</title>
+		<title>Delete Account</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
 	</head>
@@ -29,13 +29,13 @@
 		
 		  <div class="row title">
 		  	<h1 class="col-sm text-center display-1">
-		  		Sign In
+		  		Delete Account
 		  	</h1>
 		  </div>
 		  
 		  <div class="row p-4">
 		
-		  	 <form class="col-lg-6 mx-auto border border-dark rounded p-4 m-4" id="signInForm" method="post">
+		  	 <form class="col-lg-6 mx-auto border border-dark rounded p-4 m-4" id="deleteAccountForm" method="post">
 		  
 			  	<div class="form-group m-4">
 			  		<label for="username">
@@ -56,21 +56,21 @@
 			  	</div>
 			  	
 			  	<div class="form-group m-4">
-			  		<input type="submit" value="sign in" name="signIn" id="signIn" class="border rounded btn btn-primary" />
+			  		<input type="submit" value="delete account" name="deleteAccount" id="deleteAccount" class="border rounded btn btn-primary" />
 			  	</div>
 			  	
 			  	<div class="form-group m-4">
-			  		<a href="./createAccount.jsp">
+			  		<a href="./index.jsp">
 			  			<h5>
-			  				Create Account
+			  				Sign In
 			  			</h5>
 			  		</a>
 		  		</div>
 		  		
 		  		<div class="form-group m-4">
-			  		<a href="./deleteAccount.jsp">
+			  		<a href="./createAccount.jsp">
 			  			<h5>
-			  				Delete Account
+			  				Create Account
 			  			</h5>
 			  		</a>
 		  		</div>

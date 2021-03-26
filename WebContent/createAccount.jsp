@@ -35,7 +35,7 @@
 		  
 		  <div class="row p-4">
 		  
-		  	<form class="col-lg-6 mx-auto border border-dark rounded p-4 m-4" id="createAccountForm" action="./process" method="post">
+		  	<form class="col-lg-6 mx-auto border border-dark rounded p-4 m-4" id="createAccountForm" method="post">
 		  
 			  	<div class="form-group row m-4">
 			  		<label for="email">
@@ -72,6 +72,14 @@
 			  		<a href="./index.jsp">
 			  			<h5>
 			  				Sign In
+			  			</h5>
+			  		</a>
+			  	</div>
+			  	
+			  	<div class="form-group m-4">
+			  		<a href="./deleteAccount.jsp">
+			  			<h5>
+			  				Delete Account
 			  			</h5>
 			  		</a>
 			  	</div>
