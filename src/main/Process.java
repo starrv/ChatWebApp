@@ -90,14 +90,21 @@ public class Process extends HttpServlet
 		try 
 		{
 			Connection conn=getConnection();
-			String sql="Select email, username, password from user_accounts where email=username or username=username and password=password";
-			PreparedStatement stmt=conn.prepareStatement(sql);
-			boolean result=stmt.execute();
-			if(result)
+			if(!conn.isClosed())
 			{
-				if(stmt.getFetchSize()>0)
+				String sql="Select email, username, password from user_accounts where email=username or username=username and password=password";
+				PreparedStatement stmt=conn.prepareStatement(sql);
+				boolean result=stmt.execute();
+				if(result)
 				{
-					return true;
+					if(stmt.getFetchSize()>0)
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
 				}
 				else
 				{
